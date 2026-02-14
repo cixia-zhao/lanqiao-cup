@@ -1,0 +1,40 @@
+#include <iostream>
+#include <bits/stdc++.h>
+using namespace std;
+
+
+
+int main(){
+
+string a,b;
+cin >> a >> b;
+vector <int> A,B;
+for(int i = a.size()-1;i >= 0;i--)  //  倒序输入，为了对齐 //
+{
+  A.push_back(a[i] - '0');          // string 转 int
+}
+
+for(int i = b.size()-1;i >= 0;i--)
+{
+  B.push_back(b[i] - '0'); 
+}
+
+int t = 0;
+vector <int> C;
+for(int i = 0;i < max(A.size(),B.size());i++)
+{
+  if(i < A.size()) t += A[i]; 
+  if(i < B.size()) t += B[i];
+  C.push_back(t % 10); // 取个位，并且推入最右边
+  t /= 10;             // 取十位 保留，作为进位刚好加在下一次循环
+  
+}
+if(t>0) C.push_back(t); // 若最后结果位数高于原，则把余下的进位补上
+
+for(int i = C.size()-1;i >= 0;i--) // 最后倒序输出
+{
+  cout << C[i];
+}
+
+  return 0;
+} 
