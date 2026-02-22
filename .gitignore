@@ -1,0 +1,36 @@
+# Compiled files and artifacts
+###################################
+
+# Executables compiled on Linux/macOS (This is your main issue!)
+# This pattern ignores any file that doesn't have an extension.
+# We add exceptions (!) for files you DO want to keep, like Makefile or README.md
+*
+!*.*
+!README.md
+!Makefile
+!.gitignore
+
+# If the above feels too aggressive, a simpler way is to ignore specific output names.
+# For example, if you always compile to 'a.out' or 'main'
+# a.out
+# main
+
+# Object files
+*.o
+*.obj
+
+# Windows executables
+*.exe
+
+# Build directories (Good practice for larger projects)
+build/
+bin/
+
+# IDE/Editor specific files (Good practice)
+.vscode/
+.idea/
+
+# Other common temporary files
+*.swp
+*.swo
+*~
